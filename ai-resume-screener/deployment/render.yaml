@@ -1,0 +1,10 @@
+version: 1
+services:
+  web:
+    type: web
+    name: ai-resume-screener
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: streamlit run src/ui/streamlit_app.py --server.port $PORT --server.address 0.0.0.0
+    autoDeploy: true
